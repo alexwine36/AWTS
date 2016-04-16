@@ -1,0 +1,9 @@
+<% sClass = "" if local_assigns[:sClass].nil? %>
+
+<li><%= link_to "Home", root_path, :class => sClass %></li>
+
+<!--Projects-->
+<li><%= link_to "Projects", projects_path, :class => sClass %></li>
+<!--<li>%= link_to "Pages", pages_path, :class => sClass %></li>-->
+<!--<li>%= link_to "Posts", posts_path, :class => sClass %></li>-->
+<li><a class="<%= sClass %>" href="#!">Mobile</a></li>

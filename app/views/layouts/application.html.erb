@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!--META TAGS-->
+  <%= display_meta_tags site: 'AWTS',
+                        author: "google.com/+AWTechnicalSolutionsAlbuquerque",
+                        publisher: "google.com/+AWTechnicalSolutionsAlbuquerque",
+                        og: {
+                            title: :title,
+                            type: 'website',
+                            url: request.original_url()
+                        }
+  %>
+
+
+
+
+  <%= csrf_meta_tags %>
+  <%= action_cable_meta_tag %>
+
+
+</head>
+
+<body class="<%= controller_name %>">
+
+<header>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">AWTS</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <%= render 'layouts/links' %>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <%= render 'layouts/links' %>
+      </ul>
+    </div>
+  </nav>
+
+
+</header>
+<main>
+
+  <!--<div <= controller_name == "pages" ? '' : "class='container'" %>>-->
+  <div class="container">
+    <%= yield %>
+  </div>
+
+</main>
+<%= render 'layouts/footer' %>
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
+<% flash.each do |key, value| %>
+    <script type="text/javascript">
+      Materialize.toast('<p><em><%= key.capitalize %> -- </em> <%= value %></p>', 5000, 'rounded')
+    </script>
+<% end %>
+</body>
+</html>
