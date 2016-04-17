@@ -44,8 +44,9 @@
 </header>
 <main>
 
+  <div class="<%= request.env['PATH_INFO'].gsub(/\s+/, "") == "/about" ? 'photos' : 'container' %>">
   <!--<div <= controller_name == "pages" ? '' : "class='container'" %>>-->
-  <div class="container">
+
     <%= yield %>
   </div>
 

@@ -51,7 +51,7 @@ gem 'mongoid', git: 'https://github.com/estolfo/mongoid.git', branch: 'MONGOID-4
 # Material
 gem 'materialize-sass'
 gem 'material_icons'
-
+gem 'simple_form', '~> 3.1'
 # Markdown Support
 gem 'redcarpet'
 
