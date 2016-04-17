@@ -15,10 +15,29 @@ SimpleForm.setup do |config|
 
     b.use :html5
 
+  end
 
+
+  config.wrappers :full_input, :tag => 'div', class: 'col s12 input-field',
+                  hint_class: :field_with_hint, error_class: 'has-error' do |b|
+    b.use :input
+    b.use :label
+
+    b.use :hint,  wrap_with: { tag: :span, class: 'help-block' }
+    b.use :error, wrap_with: { tag: :span, class: 'error-block' }
 
   end
 
+
+  config.wrappers :half_input, :tag => 'div', class: 'col m3 s6 input-field',
+                  hint_class: :field_with_hint, error_class: 'has-error' do |b|
+    b.use :input
+    b.use :label
+
+    b.use :hint,  wrap_with: { tag: :span, class: 'help-block' }
+    b.use :error, wrap_with: { tag: :span, class: 'error-block' }
+
+  end
 
   config.wrappers :disabled_form do |b|
     b.use :label

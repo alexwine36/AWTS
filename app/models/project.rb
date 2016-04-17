@@ -2,6 +2,7 @@ class Project
   include Mongoid::Document
   include Mongoid::Timestamps
 
+  # embeds_many :goals
 
   belongs_to :customer
 
@@ -12,6 +13,10 @@ class Project
   field :reference, type: String
 
   validates_presence_of :name
+
+  # accepts_nested_attributes_for :goals, :reject_if => proc {|attributes|
+  #   attributes.all? {|k,v| v.blank?}
+  # }, allow_destroy: true
 
 
 

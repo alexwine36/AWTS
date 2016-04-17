@@ -25,21 +25,7 @@ document.addEventListener("turbolinks:load", function () {
     Waves.displayEffect();
 
     $('select').material_select();
-    
-    // if ('.photos') {
-    //
-    //
-    //     $('.markdown p').find("img").parent().unwrap().wrap('<div/>');
-    //     $('.markdown img').prepend('<div class="parallax-container"><div class="parallax">');
-    //     $('.markdown img').append('</div></div>');
-    //     // $('.markdown p:first').contents().unwrap().wrap('<div/>');
-    //     if ('.markdown') {
-    //         $("h1,h2,h3,h4,h5,h6").prepend('<div class="section white"> <div class="row container">');
-    //         $("h1,h2,h3,h4,h5,h6").addClass("header");
-    //
-    //
-    //     }
-    // }
 
+    $('p').addClass("flow-text");
 
 });

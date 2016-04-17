@@ -1,4 +1,8 @@
 class Customer
+
+  include Gravtastic
+  gravtastic :email
+
   include Mongoid::Document
   include Mongoid::Timestamps
 

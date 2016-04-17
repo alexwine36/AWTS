@@ -37,10 +37,10 @@ module ApplicationHelper
       ignore = [0]
       t.each_with_index do |match, index|
         next if ignore.include?(index)
-        p index
+        # p index
         if match != ""
           nString = ""
-          p match
+          # p match
           nIndex = index + 1
 
 
@@ -64,13 +64,13 @@ module ApplicationHelper
               nString = "<div class ='section white'><div class='row container'><"+match.insert(2, ' class= "header"')
 
 
-              (nIndex..(t.count()) - 1). each do |i|
-p "Troubleshooting " + t[i]
+              (nIndex..(t.count()) - 1).each do |i|
+                # p "Troubleshooting " + t[i]
 
                 if t[i].include? "img src="
-                  p "Troubleshooting Insert" + t[i-2]
+                  # p "Troubleshooting Insert" + t[i-2]
 
-                   t[i - 2] = t[i-2] + "</div></div>"
+                  t[i - 2] = t[i-2] + "</div></div>"
                 end
 
               end

@@ -15,18 +15,19 @@ class ProjectsController < ApplicationController
   # GET /projects/new
   def new
     @project = Project.new
+    # @project.goals.build
   end
 
   # GET /projects/1/edit
   def edit
-
+    # @project.goals.build
   end
 
   # POST /projects
   # POST /projects.json
   def create
     @project = Project.new(project_params)
-    @customer = @project.customer
+    # @customer = @project.customer
 
 
     respond_to do |format|

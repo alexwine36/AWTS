@@ -1,20 +1,18 @@
-<p>
-  <strong>Name:</strong>
-  <%= @project.name %>
-</p>
+<br>
+
+<%= render partial: @project.customer %>
+
+<h2>
 
 
-  <%= render partial: @project.customer %>
+  <%= @project.name %> <small> <%= @project.reference %></small>
+</h2>
 
 <p>
   <strong>Description:</strong>
   <%= @project.description %>
 </p>
 
-<p>
-  <strong>Reference:</strong>
-  <%= @project.reference %>
-</p>
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>

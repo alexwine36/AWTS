@@ -9,7 +9,9 @@ module ProjectsHelper
 
 
     return pid
+  end
 
+  def goal_id
 
   end
 
