@@ -44,14 +44,18 @@
 </header>
 <main>
 
-  <div class="<%= request.env['PATH_INFO'].gsub(/\s+/, "") == "/about" ? 'photos' : 'container' %>">
+  <div class="<%= request.env['PATH_INFO'].gsub(/\s+/, "") == "/about" or request.env['PATH_INFO'].gsub(/\s+/, "") == "/"? 'photos' : 'container' %>">
   <!--<div <= controller_name == "pages" ? '' : "class='container'" %>>-->
 
     <%= yield %>
   </div>
 
 </main>
+
+<!--Footer-->
 <%= render 'layouts/footer' %>
+
+
 <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
 <% flash.each do |key, value| %>
