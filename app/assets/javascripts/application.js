@@ -24,6 +24,8 @@ document.addEventListener("turbolinks:load", function () {
     $('.parallax').parallax();
     Waves.displayEffect();
 
+    $('select').material_select();
+    
     // if ('.photos') {
     //
     //

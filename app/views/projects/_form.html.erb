@@ -3,10 +3,18 @@
 <div class="row">
   <%= form_for(project, class: "col s12") do |f| %>
 
+
+      <div class="input-field col s12">
+        <%= f.collection_select(:customer_id, Customer.all, :id, :display_title, {:prompt => true}, {:tag => 'option disabled selected'}) %>
+        <%= f.label :customer %>
+      </div>
+
+
       <div class="input-field col s6">
         <%= f.text_field :name %>
         <%= f.label :name %>
       </div>
+
 
       <div class="input-field col s6">
         <% if sender == 'new' %>
@@ -16,6 +24,8 @@
         <% end %>
         <%= f.label :reference %>
       </div>
+
+
 
       <div class="input-field col s12">
         <%= f.text_area :description, :class => "materialize-textarea" %>
