@@ -1,4 +1,6 @@
-<%= request.env['PATH_INFO'].gsub(/\s+/, "") == "/about" ? '' : "<br><br>".html_safe %>
+
+
+<% request.env['PATH_INFO'].gsub(/\s+/, "") == "/about" or request.env['PATH_INFO'].gsub(/\s+/, "") == "/" ? "<br>".html_safe : "<br><br>".html_safe %>
 
 
 <footer class="blue-grey darken-3 z-depth-3">

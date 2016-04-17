@@ -1,8 +1,8 @@
 <div class="row">
   <%= simple_form_for(@page) do |f| %>
       <div class="form-inputs">
-        <%= f.input :title %>
-        <%= f.input :content, as: :text, input_html: { class: "materialize-textarea" }   %>
+        <%= f.input :title, :wrapper => :full_input  %>
+        <%= f.input :content, :wrapper => :full_input, as: :text, input_html: { class: "materialize-textarea" }   %>
       </div>
 
       <div class="form-actions">
