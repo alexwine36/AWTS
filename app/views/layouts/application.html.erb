@@ -34,6 +34,7 @@
     <div class="nav-wrapper">
       <!--<a href="#!" class="brand-logo">AWTS</a>-->
       <%= image_tag "http://res.cloudinary.com/awts/image/upload/c_scale,w_100/v1460946904/AW_Logo_nbvmgl.svg", :class => "brand-logo right" %>
+
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="left hide-on-med-and-down">
         <%= render 'layouts/links' %>
@@ -43,25 +44,26 @@
       </ul>
     </div>
   </nav>
-
-
 </header>
 <main class="<%= controller_name %>">
 
-  <div class="<%= request.env['PATH_INFO'].gsub(/\s+/, "") == "/about" or request.env['PATH_INFO'].gsub(/\s+/, "") == "/"? 'photos' : 'container' %>">
-  <!--<div <= controller_name == "pages" ? '' : "class='container'" %>>-->
-
+  <div class="
+    <% if controller_name == "pages" %>
+    <%= "photos" %>
+  <% else %>
+<%= "container" %>
+    <% end %>">
     <%= yield %>
+
   </div>
 
 </main>
 
-
-<!--Footer-->
-
 <%= render 'layouts/footer' %>
 
 
+
+</body>
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
 
 <% flash.each do |key, value| %>
@@ -69,5 +71,4 @@
       Materialize.toast('<p><em><%= key.capitalize %> -- </em> <%= value %></p>', 5000, 'rounded')
     </script>
 <% end %>
-</body>
 </html>
