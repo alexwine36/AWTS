@@ -9,4 +9,13 @@
 <!--Customers-->
 <li><%= link_to "Customers", customers_path, :class => sClass %></li>
 <!--<li>%= link_to "Posts", posts_path, :class => sClass %></li>-->
-<li><a class="<%= sClass %>" href="#!">Mobile</a></li>
+
+
+<!--User Functions-->
+<!--Not Signed In-->
+<% if user_signed_in? %>
+
+<% else %>
+    <li><%= link_to "Sign In", new_user_session_path, :class => sClass %></li>
+    <li><%= link_to "Sign Up", new_user_registration_path, :class => sClass %></li>
+<% end %>

@@ -68,3 +68,6 @@ gem 'meta-tags'
 
 # Gravatar
 gem 'gravtastic'
+
+# Devise
+gem 'devise', git: 'https://github.com/plataformatec/devise.git', branch: 'master'
