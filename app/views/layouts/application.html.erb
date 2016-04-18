@@ -21,10 +21,10 @@
   <%= csrf_meta_tags %>
   <%= action_cable_meta_tag %>
 
-
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
 </head>
 
-<body class="<%= controller_name %>">
+<body>
 
 <header>
   <nav class="z-depth-1">
@@ -43,7 +43,7 @@
 
 
 </header>
-<main>
+<main class="<%= controller_name %>">
 
   <div class="<%= request.env['PATH_INFO'].gsub(/\s+/, "") == "/about" or request.env['PATH_INFO'].gsub(/\s+/, "") == "/"? 'photos' : 'container' %>">
   <!--<div <= controller_name == "pages" ? '' : "class='container'" %>>-->
@@ -60,7 +60,7 @@
 
 
 <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
-<%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
+
 <% flash.each do |key, value| %>
     <script type="text/javascript">
       Materialize.toast('<p><em><%= key.capitalize %> -- </em> <%= value %></p>', 5000, 'rounded')
