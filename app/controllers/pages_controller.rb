@@ -14,10 +14,16 @@ class PagesController < ApplicationController
   # Static Pages
   def home
     @page = Page.find_or_create_by(title: "Home")
+    @footer = Page.find_or_create_by(title: "Footer")
+    if @footer.content.blank?
+      @footer.content = "Fill information in the Pages Controller"
+      @footer.save
+    end
     if @page.content.blank?
       @page.content = "Fill information in the Pages Controller"
       @page.save
     end
+
   end
 
   def about

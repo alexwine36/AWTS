@@ -3,11 +3,12 @@
 
 
       <!--<div class="form-inputs">-->
+      <%= f.input :display, :wrapper => :full_input %>
       <%= f.input :first_name, :wrapper => :half_input %>
       <%= f.input :last_name, :wrapper => :half_input %>
-      <%= f.input :display %>
-      <%= f.input :phone_number %>
-      <%= f.input :email %>
+
+      <%= f.input :phone_number, :wrapper => :half_input %>
+      <%= f.input :email, :wrapper => :half_input %>
       <!--</div>-->
 
       <div class="form-actions">
