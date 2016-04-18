@@ -1,22 +1,19 @@
-
-
-
-
-<footer class="blue-grey darken-3 z-depth-3">
-  <% request.env['PATH_INFO'].gsub(/\s+/, "") == "/about" or request.env['PATH_INFO'].gsub(/\s+/, "") == "/" ? "<br>".html_safe : "<br><br>".html_safe %>
-
-  <br>
-  <br>
+<footer>
   <div class="container">
     <div class="row">
       <div class="col l6 s12">
-        <h5 class="white-text">AW Technical Solutions</h5>
-        <p class="grey-text text-lighten-4">This is a brief description of stuff</p>
+
+        <div class="row footer-row">
+          <%= image_tag "http://res.cloudinary.com/awts/image/upload/c_scale,w_100/v1460946904/AW_Logo_nbvmgl.svg", :class => "footer-logo col s3" %>
+          <h5 class="white-text col s9 footer-logo-text">AW Technical Solutions</h5>
+        </div>
+
+        <p class="grey-text text-lighten-4 center"><%= Page.find_or_create_by(title: "Footer").content %></p>
       </div>
-      <div class="col l4 offset-l2 s12">
-        <h5 class="white-text">Pages</h5>
+      <div class="col l4 offset-l2 s12 center">
+        <!--<h5 class="white-text">Pages</h5>-->
         <ul>
-          <%= render partial: 'layouts/links', :locals => { :sClass => "grey-text text-lighten-3"} %>
+          <%= render partial: 'layouts/links', :locals => {:sClass => "grey-text text-lighten-3"} %>
         </ul>
       </div>
     </div>
@@ -24,8 +21,8 @@
   <div class="footer-copyright">
     <div class="container">
       <div class="grey-text text-lighten-4 right">
-        &copy; <%= copyright_notice_year_range(2015) %> <%= link_to "AW Technical Solutions", "http://www.awts.io/", :class => "grey-text text-lighten-3" %>  All Rights
-        Reserved.
+        &copy; <%= copyright_notice_year_range(2015) %> <%= link_to "AW Technical Solutions", "http://www.awts.io/", :class => "grey-text text-lighten-3" %>
+        All Rights Reserved.
       </div>
 
     </div>
