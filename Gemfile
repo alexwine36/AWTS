@@ -70,4 +70,5 @@ gem 'meta-tags'
 gem 'gravtastic'
 
 # Devise
-gem 'devise',      '> 4.x'
+# gem 'devise',      '> 4.x'
+gem 'devise', git: 'https://github.com/plataformatec/devise.git', branch: 'master'
