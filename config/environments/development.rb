@@ -20,7 +20,7 @@ Rails.application.configure do
 
     config.cache_store = :memory_store
     config.public_file_server.headers = {
-      'Cache-Control' => 'public, max-age=172800'
+        'Cache-Control' => 'public, max-age=172800'
     }
   else
     config.action_controller.perform_caching = false
@@ -31,7 +31,9 @@ Rails.application.configure do
   end
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -57,6 +59,18 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = {host: 'localhost', port: 3000}
+
+  # ActionMailer::Base.smtp_settings = {
+  #     :address              => "smtp.zoho.com",
+  #     :port                 => 465,
+  #     :user_name            => ENV["ZOHO_EMAIL"],
+  #     :password             => ENV["ZOHO_PASSWORD"],
+  #     :authentication       => :login,
+  #     :ssl                  => true,
+  #     :tls                  => true,
+  #     :enable_starttls_auto => true
+  # }
+
 
 end
