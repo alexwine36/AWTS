@@ -73,10 +73,7 @@ gem 'meta-tags'
 gem 'gravtastic'
 
 # Devise
-<<<<<<< Updated upstream
 # gem 'devise',      '> 4.x'
 gem 'devise', git: 'https://github.com/plataformatec/devise.git', branch: 'master'
-=======
-gem 'devise', git: 'https://github.com/plataformatec/devise.git', branch: 'master'
 
->>>>>>> Stashed changes
+
