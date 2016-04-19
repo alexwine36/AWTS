@@ -3,7 +3,7 @@ class User
   # Include default devise modules. Others available are:
   # , :lockable, :timeoutable and
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :confirmable #, :omniauthable
+         :recoverable, :rememberable, :trackable, :validatable #, :confirmable #, :omniauthable
 
   ## Custom Fields
   field :first_name, type: String
@@ -28,11 +28,11 @@ class User
   field :current_sign_in_ip, type: String
   field :last_sign_in_ip,    type: String
 
-  ## Confirmable
-  field :confirmation_token,   type: String
-  field :confirmed_at,         type: Time
-  field :confirmation_sent_at, type: Time
-  field :unconfirmed_email,    type: String # Only if using reconfirmable
+  # ## Confirmable
+  # field :confirmation_token,   type: String
+  # field :confirmed_at,         type: Time
+  # field :confirmation_sent_at, type: Time
+  # field :unconfirmed_email,    type: String # Only if using reconfirmable
 
   ## Lockable
   # field :failed_attempts, type: Integer, default: 0 # Only if lock strategy is :failed_attempts
