@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Page.create([{ title: 'Home', content: '![alt text](http://res.cloudinary.com/awts/image/upload/c_scale,q_80,w_960/v1460888404/DSC00122_tcoau2.jpg "Morris Circus Full")
+Page.find_or_create_by([{ title: 'Home', content: '![alt text](http://res.cloudinary.com/awts/image/upload/c_scale,q_80,w_960/v1460888404/DSC00122_tcoau2.jpg "Morris Circus Full")
 
 ## AW Technical Solutions
 
