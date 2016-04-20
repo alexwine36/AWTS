@@ -29,4 +29,4 @@ Parallax is an effect where the background content or image in this case, is mov
 This effect can do some really cool stuff which you will see if I ever get this working
 
 ![alt text](https://pixabay.com/static/uploads/photo/2014/07/27/20/29/landscape-403165_960_720.jpg "Logo Title Text 1")' },
-{ tite: 'Footer', content: 'The company that does stuff for you' }])
+{ title: 'Footer', content: 'The company that does stuff for you' }])
