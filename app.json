@@ -2,7 +2,7 @@
   "name": "AWTS",
   "description": "Website for AW Technical Solutions",
   "scripts": {
-    "postdeploy": "bundle exec rails db:setup"
+    "postdeploy": "rails db:seed"
   },
   "env": {
     "LANG": {
