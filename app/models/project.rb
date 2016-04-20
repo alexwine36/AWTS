@@ -11,6 +11,7 @@ class Project
   field :name, type: String
   field :description, type: String
   field :reference, type: String
+  field :public, type: Boolean
 
   validates_presence_of :name
 
