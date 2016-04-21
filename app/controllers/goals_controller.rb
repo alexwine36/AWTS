@@ -1,6 +1,6 @@
 class GoalsController < ApplicationController
-  # before_action :set_goal, only: [:show, :edit, :update, :destroy]
-  before_filter :get_project
+  before_action :set_goal, only: [:show, :edit, :update, :destroy]
+  before_action :get_project, only: [:new]
 
   def get_project
     @project = Project.find(params[:project_id])
@@ -27,6 +27,7 @@ class GoalsController < ApplicationController
 
   # GET /goals/1/edit
   def edit
+    @goal = @project.goals.find(params[:id])
   end
 
   # POST /goals
@@ -38,7 +39,7 @@ class GoalsController < ApplicationController
 
     respond_to do |format|
       if @goal.save
-        format.html { redirect_to @goal, notice: 'Goal was successfully created.' }
+        format.html { redirect_to @project, notice: 'Goal was successfully created.' }
         format.json { render :show, status: :created, location: @goal }
       else
         format.html { render :new }
@@ -74,7 +75,8 @@ class GoalsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_goal
-      @goal = Goal.find(params[:id])
+      @project = Project.find(params[:project_id])
+      @goal = @project.goals.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
