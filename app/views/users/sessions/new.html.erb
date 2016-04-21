@@ -4,15 +4,16 @@
       <div class="form-inputs">
         <%= f.input :email, required: false, autofocus: true, :wrapper => :full_input %>
         <%= f.input :password, required: false, :wrapper => :full_input %>
-        <%= f.input :remember_me , :wrapper => :full_input, as: :boolean if devise_mapping.rememberable? %>
+        <%= f.input :remember_me ,  as: :boolean if devise_mapping.rememberable? %>
+    <br><br>
       </div>
 
       <div class="form-actions">
-        <br><br>
-        <%= f.button :submit %>
+
+        <%= f.button :submit, "Sign In" %>
       </div>
   <% end %>
 
 </div>
-
+<br><br>
 <%= render "users/shared/links" %>

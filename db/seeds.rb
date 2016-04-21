@@ -9,29 +9,29 @@
 Page.find_or_create_by(title: 'Home') do |page|
   page.content = '![alt text](http://res.cloudinary.com/awts/image/upload/c_scale,q_80,w_960/v1460888404/DSC00122_tcoau2.jpg "Morris Circus Full")
 
-  ## AW Technical Solutions
+## AW Technical Solutions
 
-  Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Fill information in the Pages Controller.
+Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Fill information in the Pages Controller.
 
-  This effect can do some really cool stuff which you will see if I ever get this working
+This effect can do some really cool stuff which you will see if I ever get this working
 
-  ![alt text](http://res.cloudinary.com/awts/image/upload/c_scale,w_960/v1460888674/DSC00082_pkymdm.jpg "Logo Title Text 1")
+![alt text](http://res.cloudinary.com/awts/image/upload/c_scale,w_960/v1460888674/DSC00082_pkymdm.jpg "Logo Title Text 1")
 
-  ## Recent Projects
+## Recent Projects
 
-  The pictures displayed on this portion of the site are from the most recent project done, The Morris Circus Exhibit. This installation was done at The Museum of International Folk Art in Santa Fe New Mexico.
+The pictures displayed on this portion of the site are from the most recent project done, The Morris Circus Exhibit. This installation was done at The Museum of International Folk Art in Santa Fe New Mexico.
 
-  ![alt text](http://res.cloudinary.com/awts/image/upload/c_scale,w_960/v1460888712/DSC00148_qrj66d.jpg "Logo Title Text 1'
+![alt text](http://res.cloudinary.com/awts/image/upload/c_scale,w_960/v1460888712/DSC00148_qrj66d.jpg "Logo Title Text 1")'
 
 end
 
 Page.find_or_create_by(title: 'About') do |page|
   page.content = '![alt text](https://pixabay.com/static/uploads/photo/2014/07/27/20/29/landscape-403165_960_720.jpg "Logo Title Text 1")
-  ## About
+## About
 
-  Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Fill information in the Pages Controller.
+Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling. Fill information in the Pages Controller.
 
-  This effect can do some really cool stuff which you will see if I ever get this working
+This effect can do some really cool stuff which you will see if I ever get this working
 
-  ![alt text](https://pixabay.com/static/uploads/photo/2014/07/27/20/29/landscape-403165_960_720.jpg "Logo Title Text 1")'
+![alt text](https://pixabay.com/static/uploads/photo/2014/07/27/20/29/landscape-403165_960_720.jpg "Logo Title Text 1")'
 end
