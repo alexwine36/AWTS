@@ -1,6 +1,8 @@
 class GoalsController < ApplicationController
-  before_action :set_goal, only: [:show, :edit, :update, :destroy]
-  before_action :get_project, only: [:new]
+  before_action :get_project, only: [:new, :show, :edit, :update]
+  before_action :set_goal, only: [:show, :edit, :update]
+
+
 
   def get_project
     @project = Project.find(params[:project_id])
@@ -65,22 +67,24 @@ class GoalsController < ApplicationController
   # DELETE /goals/1
   # DELETE /goals/1.json
   def destroy
+    @project = Project.find(params[:project_id])
+    @goal = @project.goals.find(params[:id])
     @goal.destroy
     respond_to do |format|
-      format.html { redirect_to goals_url, notice: 'Goal was successfully destroyed.' }
+      format.html { redirect_to @project, notice: 'Goal was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_goal
-      @project = Project.find(params[:project_id])
-      @goal = @project.goals.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_goal
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def goal_params
-      params.require(:goal).permit(:problem)
-    end
+    @goal = @project.goals.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def goal_params
+    params.require(:goal).permit(:problem, :reference)
+  end
 end

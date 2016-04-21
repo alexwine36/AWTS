@@ -20,12 +20,9 @@
 <%= link_to "New Goal", new_project_goal_path(@project) %>
 <br>
 <% if @project.goals.any? %>
-<% @project.goals.each do |goal| %>
-<%= goal.problem %>
-<%= goal.id %>
-<%= link_to "Edit", edit_project_goal_path(@project, goal) %>
-<br>
-<% end %>
+
+<%= render partial: @project.goals %>
+
 <% else %>
 <h3><small>
   No Goals Found

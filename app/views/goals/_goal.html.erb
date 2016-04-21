@@ -1,0 +1,6 @@
+
+<%= goal.problem %> | <%= goal.reference %>
+<%= link_to 'Show', project_goal_path(@project , goal) %>
+<%= link_to "Edit", edit_project_goal_path(@project, goal) %>
+<%= link_to 'Destroy', project_goal_path(@project , goal) , method: :delete, data: { confirm: 'Are you sure?' } %>
+<br>
