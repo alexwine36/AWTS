@@ -7,11 +7,13 @@ SimpleForm.setup do |config|
   # whole input.
   config.wrappers :material_checkbox,
                   hint_class: :field_with_hint, error_class: 'has-error' do |b|
-    b.use :input
+
+    b.use :input, wrap_with: { tag: :div, class: 'row'}
     b.use :label
 
     b.use :hint,  wrap_with: { tag: :span, class: 'help-block' }
     b.use :error, wrap_with: { tag: :span, class: 'error-block' }
+
 
     b.use :html5
 

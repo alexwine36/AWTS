@@ -2,6 +2,7 @@
   "name": "AWTS",
   "description": "Website for AW Technical Solutions",
   "scripts": {
+    "postdeploy": "rails db:seed"
   },
   "env": {
     "LANG": {
