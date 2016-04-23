@@ -21,7 +21,12 @@ $link-color: color("light-blue", "darken-1") !default;
 
 @import "materialize/extras/nouislider";
 
-
+.primary-background {
+  @extend .light-blue;
+}
+.secondary-background {
+  @extend .orange, .accent-3;
+}
 
 
 body {
