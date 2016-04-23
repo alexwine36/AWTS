@@ -1,0 +1,58 @@
+@font-face {
+    font-family: 'AWTS';
+    src:    url('fonts/AWTS.eot?9t354g');
+    src:    url('fonts/AWTS.eot?9t354g#iefix') format('embedded-opentype'),
+    url('fonts/AWTS.ttf?9t354g') format('truetype'),
+    url('fonts/AWTS.woff?9t354g') format('woff'),
+    url('fonts/AWTS.svg?9t354g#AWTS') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="awts-"], [class*=" awts-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'AWTS' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.awts-AW_Logo_mono1:before {
+    content: "\e900";
+}
+.awts-AW_Logo .path1:before {
+    content: "\1f5f9";
+    color: rgb(45, 165, 223);
+}
+.awts-AW_Logo .path2:before {
+    content: "\1f5fa";
+    margin-left: -1em;
+    color: rgb(24, 148, 222);
+}
+.awts-AW_Logo .path3:before {
+    content: "\1f5fb";
+    margin-left: -1em;
+    color: rgb(249, 137, 38);
+}
+.awts-AW_Logo .path4:before {
+    content: "\1f5fc";
+    margin-left: -1em;
+    color: rgb(14, 85, 125);
+}
+.awts-AW_Logo .path5:before {
+    content: "\1f5fd";
+    margin-left: -1em;
+    color: rgb(222, 98, 4);
+}
+.awts-AW_Logo .path6:before {
+    content: "\1f5fe";
+    margin-left: -1em;
+    color: rgb(253, 185, 78);
+}
