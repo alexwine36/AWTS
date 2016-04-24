@@ -4,9 +4,9 @@ class Goal
   field :reference, type: String
   field :problem, type: String
 
+
+  embeds_many :goals
   embedded_in :project
-
-
 
   # def goal_id
   #   # "#{display} - #{first_name} #{last_name}"

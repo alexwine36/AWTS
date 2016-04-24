@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
 
+
   devise_for :users
   resources :pages
   resources :customers
   resources :projects do
-    resources :goals
+    resources :goals do
+      resources :solutions
+    end
   end
 
   get 'about', to: 'pages#about'

@@ -17,7 +17,7 @@
 
 
   <li class="collection-item avatar">
-    <%= link_to "tel:#{customer.phone_number}" do %>
+    <%= link_to tel_link(customer.phone_number) do %>
         <i class="material-icons circle green">perm_phone_msg</i>
     <% end %>
     <span class="title">Phone</span>
