@@ -1,0 +1,11 @@
+<%= simple_form_for([@project, @goal, @goal.solutions.build]) do |f| %>
+
+
+  <div class="form-inputs">
+    <%= f.input :description %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
