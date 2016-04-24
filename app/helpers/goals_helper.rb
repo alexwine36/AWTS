@@ -18,14 +18,14 @@ module GoalsHelper
       lt = goal.updated_at
     end
 
-      color = ""
-      if (lt < DateTime.now-15.days)
-        color = "red"
-      elsif (lt < DateTime.now-7.days)
-        color = "yellow"
-      else
-        color = "blue"
-      end
+    color = ""
+    if (lt < DateTime.now-15.days)
+      color = "red"
+    elsif (lt < DateTime.now-7.days)
+      color = "yellow"
+    else
+      color = "blue"
+    end
 
     return p color
   end
