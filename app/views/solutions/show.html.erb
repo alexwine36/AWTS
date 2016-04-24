@@ -5,5 +5,5 @@
   <%= @solution.description %>
 </p>
 
-<%= link_to 'Edit', edit_solution_path(@solution) %> |
-<%= link_to 'Back', solutions_path %>
+<%= link_to 'Edit', edit_project_goal_solution_path(@project, @goal, @solution) %> |
+<%= link_to 'Back', project_goal_path(@project, @goal) %>

@@ -10,10 +10,5 @@
 
 <br><br>
 <h3>Solutions</h3>
-<% if @goal.solutions.any? %>
-    <% @goal.solutions.each do |solution| %>
-        <%= solution.description %>
-        <%= solution %>
-    <% end %>
-<% end %>
+<%= render @goal.solutions %>
 <%= link_to "New Goal", new_project_goal_solution_path(@project, @goal) %>

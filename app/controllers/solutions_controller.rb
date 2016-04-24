@@ -1,6 +1,7 @@
 class SolutionsController < ApplicationController
-  before_action :set_solution, only: [:show, :edit, :update]
   before_action :get_goal, only: [:new, :show, :edit, :update, :create]
+  before_action :set_solution, only: [:show, :edit, :update]
+
   # before_action :set_goal, only: [:show, :edit, :update]
 
 
@@ -29,7 +30,7 @@ class SolutionsController < ApplicationController
 
   # GET /solutions/1/edit
   def edit
-    @solution = @goal.solution.find(params[:id])
+    # @solution = @goal.solution.find(params[:id])
   end
 
   # POST /solutions
@@ -56,7 +57,7 @@ class SolutionsController < ApplicationController
   def update
     respond_to do |format|
       if @solution.update(solution_params)
-        format.html { redirect_to @solution, notice: 'Solution was successfully updated.' }
+        format.html { redirect_to project_goal_path(@project, @goal), notice: 'Solution was successfully updated.' }
         format.json { render :show, status: :ok, location: @solution }
       else
         format.html { render :edit }
@@ -68,11 +69,14 @@ class SolutionsController < ApplicationController
   # DELETE /solutions/1
   # DELETE /solutions/1.json
   def destroy
-    @goal = Goal.find(params[:goal_id])
+    # @goal = Goal.find(params[:goal_id])
+    # @solution = @goal.solutions.find(params[:id])
+    @project = Project.find(params[:project_id])
+    @goal = @project.goals.find(params[:goal_id])
     @solution = @goal.solutions.find(params[:id])
     @solution.destroy
     respond_to do |format|
-      format.html { redirect_to solutions_url, notice: 'Solution was successfully destroyed.' }
+      format.html { redirect_to project_goal_path(@project, @goal), notice: 'Solution was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

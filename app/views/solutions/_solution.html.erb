@@ -1,0 +1,6 @@
+<p>
+  <%= solution.description %>
+<%= link_to 'Show', project_goal_solution_path(@project, @goal, solution) %> |
+<%= link_to 'Edit', edit_project_goal_solution_path(@project, @goal,solution) %> |
+<%= link_to 'Destroy', project_goal_solution_path(@project, @goal, solution), method: :delete, data: { confirm: 'Are you sure?' } %>
+</p>
