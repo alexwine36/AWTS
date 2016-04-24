@@ -1,6 +1,38 @@
-<%= link_to customer_path(customer), :class => "right" do %>
-    <div class="chip hoverable">
-      <%= image_tag customer.gravatar_url %>
-      <%= customer.display %>
-    </div>
-<% end %>
+<h3>
+  <small>Customer</small>
+</h3>
+
+
+
+<ul class="collection">
+
+  <li class="collection-item avatar">
+    <%= link_to customer_path(customer) do %>
+        <i class="material-icons circle">account_circle</i>
+    <% end %>
+    <span class="title">Name</span>
+    <p><%= customer.first_name %> <%= customer.last_name %></p>
+    <!--<a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>-->
+  </li>
+
+
+  <li class="collection-item avatar">
+    <%= link_to "tel:#{customer.phone_number}" do %>
+        <i class="material-icons circle green">perm_phone_msg</i>
+    <% end %>
+    <span class="title">Phone</span>
+    <p>
+      <%= customer.phone_number %>
+    </p>
+  </li>
+  <li class="collection-item avatar">
+    <%= link_to "mailto:#{ customer.email }" do %>
+        <i class="material-icons circle red">contact_mail</i>
+    <% end %>
+    <span class="title">Mail</span>
+    <p>
+      <%= customer.email %>
+    </p>
+
+  </li>
+</ul>

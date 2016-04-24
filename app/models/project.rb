@@ -2,7 +2,7 @@ class Project
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  # embeds_many :goals
+  embeds_many :goals
 
   belongs_to :customer
 

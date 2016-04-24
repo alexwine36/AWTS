@@ -26,6 +26,7 @@ document.addEventListener("turbolinks:load", function () {
 
     $('select').material_select();
 
-    $('p').addClass("flow-text");
+    // $('p').addClass("flow-text");
 
+    
 });

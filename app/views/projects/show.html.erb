@@ -1,18 +1,71 @@
-<br>
-
-<%= render partial: @project.customer %>
+<%= render partial: "customers/customer_chip", :locals => {:customer => @project.customer}  %>
 
 <h2>
-
-
-  <%= @project.name %> <small> <%= @project.reference %></small>
+  <%= @project.name %>
+  <small> <%= @project.reference %></small>
 </h2>
+<div class="row">
+  <section class="col s12 m7">
 
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
+    <p>
+      <strong>Description:</strong>
+      <%= @project.description %>
+    </p>
+    <%= link_to 'Edit', edit_project_path(@project) %> |
+    <%= link_to 'Back', projects_path %>
+    <br><br>
+<%= render partial: @project.customer %>
+  </section>
 
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+  <aside class="col s12 m5">
+
+    <!-- Goals -->
+    <a class="btn-floating btn-large waves-effect waves-light secondary-background right tooltipped" data-position="bottom" data-delay="50" data-tooltip="Add New Goal" onclick="newGoal()" id="addForm"><i class="material-icons">add</i></a>
+    <a class="btn-floating btn-large waves-effect waves-light secondary-background right tooltipped" data-position="bottom" data-delay="50" data-tooltip="Remove Goal" onclick="endGoal()" id="hideForm" style="display: none"><i class="material-icons">add</i></a>
+
+    <script type="text/javascript" charset="utf-8">
+      //  document.addEventListener("turbolinks:load", function () {
+      function newGoal() {
+        $("#goalForm").show();
+        $("#addForm").hide();
+        $("#hideForm").show();
+
+      }
+
+      function endGoal() {
+        $("#goalForm").hide();
+        $("#addForm").show();
+        $("#hideForm").hide();
+      }
+      //  })
+    </script>
+
+
+    <%= render partial: "goals/form", :locals => {:@project => @project} %>
+
+    <h3>
+      <small>Goals</small>
+    </h3>
+    <!--<br>-->
+    <% if @project.goals.any? %>
+
+        <%= render partial: @project.goals %>
+
+    <% else %>
+        <h3>
+          <small>
+            No Goals Found
+          </small>
+        </h3>
+    <% end %>
+
+
+    <!--%= link_to "New Goal", new_project_goal_path(@project) %>-->
+    <!--<button>Add Goal</button>-->
+
+    <!-- End of Goals -->
+
+  </aside>
+
+</div>

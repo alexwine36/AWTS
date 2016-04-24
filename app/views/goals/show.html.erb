@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Problem:</strong>
+  <%= @goal.problem %>
+</p>
+
+<%= link_to "Edit", edit_project_goal_path(@project, @goal) %> |
+<%= link_to 'Back', project_path(@project) %>

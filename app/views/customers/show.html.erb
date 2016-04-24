@@ -1,4 +1,4 @@
-<%= render partial: @customer %>
+<%= render partial: "customers/customer_chip", :locals => {:customer => @customer}  %>
 <p>
   <strong>First name:</strong>
   <%= @customer.first_name %>

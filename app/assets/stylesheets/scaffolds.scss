@@ -21,7 +21,12 @@ $link-color: color("light-blue", "darken-1") !default;
 
 @import "materialize/extras/nouislider";
 
-
+.primary-background {
+  @extend .light-blue;
+}
+.secondary-background {
+  @extend .orange, .accent-3;
+}
 
 
 body {
@@ -46,36 +51,72 @@ footer {
   }
 }
 
-.footer-logo {
-  width:  95px;
-  height: 95px;
-}
-.footer-logo-text {
-  vertical-align: middle;
-  line-height: 90px;
-}
-.footer-row {
-  padding-top: 25px;
-}
-small {
-  color: transparentize(black, .5)
-}
+.brand-logo.awts-AW_Logo.right {
+  //width:  95px;
+  //height: 95px;
+  font-size: 686%;
+  text-shadow: 5px 5px 10px #000000;
 
-
-
-
-
-
-nav {
-  min-height: 70px;
-}
-
-.customers, .projects {
-  padding-top: 25px;
-  padding-bottom: 25px;
+  span.path2 {
+    text-shadow: none;
+  }
+  span.path3 {
+    text-shadow: none;
+  }
+  span.path4 {
+    text-shadow: none;
+  }
+  span.path5 {
+    text-shadow: none;
+  }
+  span.path6 {
+    text-shadow: none;
+  }
 }
 
-.brand-logo {
-  width:  95px;
-  height: 95px;
-}
+  .footer-logo {
+    font-size: 350%;
+    vertical-align: middle;
+    text-shadow: 5px 5px 10px #000000;
+    span.path2 {
+      text-shadow: none;
+    }
+    span.path3 {
+      text-shadow: none;
+    }
+    span.path4 {
+      text-shadow: none;
+    }
+    span.path5 {
+      text-shadow: none;
+    }
+    span.path6 {
+      text-shadow: none;
+    }
+  }
+  .footer-logo-text {
+    vertical-align: middle;
+    line-height: 90px;
+  }
+  .footer-row {
+    padding-top: 25px;
+  }
+  small {
+    color: transparentize(black, .5)
+  }
+
+
+
+
+
+
+  nav {
+    min-height: 70px;
+  }
+
+  .customers, .projects {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+

@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+
   devise_for :users
   resources :pages
   resources :customers
-  resources :projects
+  resources :projects do
+    resources :goals
+  end
 
   get 'about', to: 'pages#about'
   get 'home', to: 'pages#home'

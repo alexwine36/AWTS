@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 
   before_action :set_tags, only: [:show, :edit]
 
+  layout 'page_layout'
 
   # GET /pages
   # GET /pages.json
