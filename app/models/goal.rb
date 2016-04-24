@@ -1,7 +1,8 @@
 class Goal
 
   include Mongoid::Document
-  # field :_id, type: String, default: ->{display.to_s.parameterize}
+  include Mongoid::Timestamps
+  field :_id, type: String, default: ->{reference.to_s.parameterize}
   field :reference, type: String
   field :problem, type: String
 
@@ -11,20 +12,6 @@ class Goal
 
   accepts_nested_attributes_for :solutions
 
-  # def goal_id
-  #   # "#{display} - #{first_name} #{last_name}"
-  #
-  #
-  # end
-
-  # def solution_attributes=(attributes)
-  #   @solution = Solution.new(attributes)
-  # end
-
+  validates_presence_of :problem, :reference
 
 end
-
-# class Solution
-#   include ActiveAttr::Model
-#   attribute :description
-# end

@@ -4,18 +4,22 @@
 <% else %>
     <div class="row">
       <div class="col s12">
-        <div class="card light-blue darken-4">
-          <div class="card-content white-text">
-            <span class="card-title"><%= goal.reference %></span>
-            <p><%= goal.problem %></p>
-          </div>
-          <div class="card-action white">
-            <%= link_to 'Show', project_goal_path(@project , goal) %>
-            <%= link_to 'Edit', edit_project_goal_path(@project, goal) %>
-            <%= link_to 'Destroy', project_goal_path(@project , goal) , method: :delete, data: { confirm: 'Are you sure?' } %>
-          </div>
+        <% if !goal.solutions.nil? %>
+            <%= "<div class='card #{ goal_status(goal) }'>".html_safe %>
+        <% end %>
+        <div class="card-content white-text">
+          <span class="card-title"><%= goal.reference %></span>
+          <p><%= goal.problem %></p>
+          <br>
+          <p><%= get_updated(goal) %></p>
+        </div>
+        <div class="card-action white">
+          <%= link_to 'Show', project_goal_path(@project, goal) %>
+          <%= link_to 'Edit', edit_project_goal_path(@project, goal) %>
+          <%= link_to 'Destroy', project_goal_path(@project, goal), method: :delete, data: {confirm: 'Are you sure?'} %>
         </div>
       </div>
+    </div>
     </div>
 
     <br>

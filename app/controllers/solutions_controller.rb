@@ -90,6 +90,6 @@ class SolutionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def solution_params
-      params.require(:solution).permit(:description)
+      params.require(:solution).permit(:description, :status, :ref)
     end
 end

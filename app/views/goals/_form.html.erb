@@ -6,24 +6,20 @@
 <% ref_id = goal_ref(@project.id) %>
 
 <div class="form-inputs">
-  <%= f.input :reference, input_html: {value: ref_id || 'AA'}, :wrapper => :full_input  %>
+  <%= f.input :reference, input_html: {value: ref_id || 'AA'}, as: :hidden  %>
 </div>
   <div class="form-inputs">
     <%= f.input :problem, :wrapper => :full_input %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <!--%= f.button :submit %>-->
 
   </div>
       <br><br>
       <a href="#" onclick="endGoal()">Cancel</a>
 
-      <%= f.simple_fields_for :solutions do |s| %>
-          <div class="form-inputs">
-            <%= s.input :description %>
-          </div>
-      <% end %>
+
 
 
   <% end %>

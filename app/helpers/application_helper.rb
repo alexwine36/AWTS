@@ -118,6 +118,10 @@ module ApplicationHelper
     end
   end
 
+  def get_updated(model)
+    update = model.updated_at
+    update.strftime("Updated: %D %I:%M%p")
+  end
 
 end
 
