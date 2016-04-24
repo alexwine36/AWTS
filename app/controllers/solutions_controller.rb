@@ -1,11 +1,12 @@
 class SolutionsController < ApplicationController
   before_action :set_solution, only: [:show, :edit, :update]
-  before_action :get_goal, only: [:new, :show, :edit, :update]
+  before_action :get_goal, only: [:new, :show, :edit, :update, :create]
   # before_action :set_goal, only: [:show, :edit, :update]
 
 
   def get_goal
-    @goal = Goal.find(params[:goal_id])
+    @project = Project.find(params[:project_id])
+    @goal = @project.goals.find(params[:goal_id])
   end
 
   # GET /solutions
@@ -35,13 +36,13 @@ class SolutionsController < ApplicationController
   # POST /solutions.json
   def create
     # @solution = Solution.new(solution_params)
-    @goal = Goal.find(params[:goal_id])
-    @solution = @goal.solution.new(goal_params)
+    # @goal = Goal.find(params[:goal_id])
+    @solution = @goal.solutions.new(solution_params)
 
 
     respond_to do |format|
       if @solution.save
-        format.html { redirect_to @goal, notice: 'Solution was successfully created.' }
+        format.html { redirect_to project_goal_path(@project, @goal), notice: 'Solution was successfully created.' }
         format.json { render :show, status: :created, location: @solution }
       else
         format.html { render :new }

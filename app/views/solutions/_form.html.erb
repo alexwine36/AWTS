@@ -1,4 +1,4 @@
-<%= simple_form_for(@solution) do |f| %>
+<%= simple_form_for([@project, @goal, @goal.solutions.build]) do |f| %>
 
 
   <div class="form-inputs">

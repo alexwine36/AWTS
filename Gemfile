@@ -75,4 +75,7 @@ gem 'gravtastic'
 # Devise
 gem 'devise',      '> 4.x'
 
+# Active_Attr
+gem 'active_attr'
+
 

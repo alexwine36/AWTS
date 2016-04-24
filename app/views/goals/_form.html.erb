@@ -18,6 +18,14 @@
   </div>
       <br><br>
       <a href="#" onclick="endGoal()">Cancel</a>
+
+      <%= f.simple_fields_for :solutions do |s| %>
+          <div class="form-inputs">
+            <%= s.input :description %>
+          </div>
+      <% end %>
+
+
   <% end %>
 
 </div>
