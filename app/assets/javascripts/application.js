@@ -28,4 +28,5 @@ document.addEventListener("turbolinks:load", function () {
 
     // $('p').addClass("flow-text");
 
+    
 });
