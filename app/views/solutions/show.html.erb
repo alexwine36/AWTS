@@ -1,0 +1,8 @@
+
+<p>
+  <strong>Description:</strong>
+  <%= @solution.description %>
+</p>
+
+<%= link_to 'Edit', edit_project_goal_solution_path(@project, @goal, @solution) %> |
+<%= link_to 'Back', project_goal_path(@project, @goal) %>

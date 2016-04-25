@@ -1,9 +1,18 @@
-<p id="notice"><%= notice %></p>
 
 <p>
   <strong>Problem:</strong>
   <%= @goal.problem %>
 </p>
 
-<%= link_to "Edit", edit_project_goal_path(@project, @goal) %> |
+<%= link_to 'Edit', edit_project_goal_path(@project, @goal) %> |
 <%= link_to 'Back', project_path(@project) %>
+
+<br><br>
+<h3>Solutions</h3>
+<ul class="collection z-depth-1">
+  <%= render @goal.solutions %>
+</ul>
+
+<%= render partial: "solutions/form", :locals => {:@project => @project, :@goal => @goal} %>
+
+<!--%= link_to "New Goal", new_project_goal_solution_path(@project, @goal) %>-->

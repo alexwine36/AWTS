@@ -17,6 +17,7 @@ class GoalsController < ApplicationController
   # GET /goals/1
   # GET /goals/1.json
   def show
+    # @goal.solutions.build
   end
 
   # GET /goals/new
@@ -85,6 +86,6 @@ class GoalsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def goal_params
-    params.require(:goal).permit(:problem, :reference)
+    params.require(:goal).permit(:problem, :reference, :solutions_attributes => [:description])
   end
 end

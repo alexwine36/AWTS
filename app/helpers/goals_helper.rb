@@ -9,6 +9,27 @@ module GoalsHelper
     return p letters[gCount]
 
   end
+
+  def goal_status(goal)
+    if !goal.solutions.first.nil?
+      latest = goal.solutions.order(updated_at: :desc).first
+      lt = latest.updated_at
+    else
+      lt = goal.updated_at
+    end
+
+    color = ""
+    if (lt < DateTime.now-15.days)
+      color = "red"
+    elsif (lt < DateTime.now-7.days)
+      color = "yellow"
+    else
+      color = "blue"
+    end
+
+    return p color
+  end
+
   # def project_id
   #   date = DateTime.now.to_date
   #   pid = date.strftime('%m%d%y')

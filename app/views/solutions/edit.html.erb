@@ -1,0 +1,19 @@
+<h1>Editing Solution</h1>
+
+<!--%= render 'form', solution: @solution %>-->
+<%= simple_form_for([@project, @goal, @solution]) do |f| %>
+    <div class="form-inputs">
+      <%= f.input :description %>
+    </div>
+    <div class="form-inputs">
+      <%= f.input :status, collection: ["In Progress", "Closed", "Researching"], prompt: "Select Status" %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+<% end %>
+
+
+<%= link_to 'Show', project_goal_solution_path(@project,@goal,@solution) %> |
+<%= link_to 'Back', project_goal_solution_path(@project, @goal,@solution) %>

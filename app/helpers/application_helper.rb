@@ -117,9 +117,10 @@ module ApplicationHelper
       "#{current_year}"
     end
   end
-  def tel_to(text)
-    groups = text.to_s.scan(/(?:^\+)?\d+/)
-    link_to text, "tel:#{groups.join '-'}"
+
+  def get_updated(model)
+    update = model.updated_at
+    update.strftime("Updated: %D %I:%M%p")
   end
 
 end
