@@ -18,7 +18,7 @@ json.project do
     json.id goal.id
     json.problem goal.problem
     json.url project_goal_path(@project, goal)
-    json.goals goal.solutions do |solution|
+    json.solutions goal.solutions do |solution|
       json.id solution.id
       json.description solution.description
       json.url project_goal_solution_path(@project, goal, solution)
