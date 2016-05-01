@@ -8,8 +8,23 @@
       </div>
 
       <div class="input-field col s6">
-        <%= f.collection_select(:customer_id, Customer.all, :id, :display_title, {:prompt => true}, {:tag => 'option disabled selected'}) %>
+        <% if sender == 'new' %>
+            <%= f.text_field :reference, :value => project_id %>
+        <% else %>
+            <%= f.text_field :reference %>
+        <% end %>
+        <%= f.label :reference %>
+      </div>
+
+      <div class="input-field col s10">
+        <%= f.collection_select(:customer_id, Customer.all, :id, :display_title, {:prompt => 'Select Customer'}) %>
         <%= f.label :customer %>
+      </div>
+      <div class="col s2">
+        <br>
+      <%= link_to new_customer_path(project), class: 'waves-effect waves-orange btn-flat' do %>
+            <i class="material-icons">add</i>
+        <% end %>
       </div>
 
 
@@ -20,14 +35,7 @@
       </div>
 
 
-      <div class="input-field col s12">
-        <% if sender == 'new' %>
-            <%= f.text_field :reference, :value => project_id %>
-        <% else %>
-            <%= f.text_field :reference %>
-        <% end %>
-        <%= f.label :reference %>
-      </div>
+
 
 
       <div class="input-field col s12">
