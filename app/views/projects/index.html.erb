@@ -1,28 +1,29 @@
 <h1>Projects</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Reference</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.name %></td>
-        <td><%= project.description %></td>
-        <td><%= project.reference %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<ul class="collapsible popout" data-collapsible="accordion">
+  <% @projects.each do |project| %>
+      <li>
+        <div class="collapsible-header"><%= project.name %> |
+          <small><%= project.reference %></small>
+
+
+        </div>
+        <div class="collapsible-body">
+<div class="pRight">
+          <%= render partial: "customers/customer_chip", :locals => {:customer => project.customer}  %>
+</div>
+          <%= simple_format(project.description) %>
+          <div class="pRight">
+            <%= link_to 'Show', project %>
+            <%= link_to 'Edit', edit_project_path(project) %>
+            <%= link_to 'Destroy', project, method: :delete, data: {confirm: 'Are you sure?'} %></div>
+          <br><br>
+        </div>
+      </li>
+  <% end %>
+</ul>
+
 
 <br>
 

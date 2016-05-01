@@ -25,7 +25,9 @@ document.addEventListener("turbolinks:load", function () {
     Waves.displayEffect();
 
     $('select').material_select();
-
+    $('.collapsible').collapsible({
+        accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+    });
     // $('p').addClass("flow-text");
 
     
