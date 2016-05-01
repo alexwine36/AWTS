@@ -11,7 +11,35 @@
       <%= f.input :email, :wrapper => :half_input %>
       <!--</div>-->
 
-      <div class="form-actions">
+      <a class="btn-floating btn-large waves-effect waves-light secondary-background right tooltipped" data-position="bottom" data-delay="50" data-tooltip="Enter Address" onclick="newAddress()" id="addAddress"><i class="material-icons">add</i></a>
+      <a class="btn-floating btn-large waves-effect waves-light secondary-background right tooltipped" data-position="bottom" data-delay="50" data-tooltip="Remove Address" onclick="endAddress()" id="hideAddress" style="display: none"><i class="material-icons">add</i></a>
+
+      <script type="text/javascript" charset="utf-8">
+        //  document.addEventListener("turbolinks:load", function () {
+        function newAddress() {
+          $("#address_field").fadeIn();
+          $("#addAddress").hide();
+          $("#hideAddress").show();
+
+        }
+
+        function endAddress() {
+          $("#address_field").fadeOut();
+          $("#addAddress").show();
+          $("#hideAddress").hide();
+        }
+        //  })
+      </script>
+
+      <div id="address_field" class="row" style="display: none">
+        <%= f.input :street, :wrapper => :full_input %>
+        <%= f.input :city %>
+        <%= f.input :state %>
+        <%= f.input :zip %>
+        <%= f.input :country %>
+      </div>
+
+      <div class="row">
         <%= f.button :submit %>
       </div>
 

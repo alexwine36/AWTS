@@ -1,23 +1,56 @@
-<%= render partial: "customers/customer_chip", :locals => {:customer => @customer}  %>
-<p>
-  <strong>First name:</strong>
-  <%= @customer.first_name %>
-</p>
+<%= render partial: "customers/customer_chip", :locals => {:customer => @customer} %>
+<div class="row">
+  <div class="col s6">
+    <p>
+      <strong>First name:</strong>
+      <%= @customer.first_name %>
+    </p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @customer.last_name %>
-</p>
+    <p>
+      <strong>Last name:</strong>
+      <%= @customer.last_name %>
+    </p>
 
-<p>
-  <strong>Phone number:</strong>
-  <%= @customer.phone_number %>
-</p>
+    <p>
+      <strong>Phone number:</strong>
+      <%= @customer.phone_number %>
+    </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @customer.email %>
-</p>
+    <p>
+      <strong>Email:</strong>
+      <%= @customer.email %>
+    </p>
 
-<%= link_to 'Edit', edit_customer_path(@customer) %> |
-<%= link_to 'Back', customers_path %>
+  </div>
+  <div class="col s6">
+    <p>
+      <strong>Street:</strong>
+      <%= @customer.street %>
+    </p>
+
+    <p>
+      <strong>City:</strong>
+      <%= @customer.city %>
+    </p>
+
+    <p>
+      <strong>State:</strong>
+      <%= @customer.state %>
+    </p>
+
+    <p>
+      <strong>Zip:</strong>
+      <%= @customer.zip %>
+    </p>
+
+    <p>
+      <strong>Country:</strong>
+      <%= @customer.country %>
+    </p>
+  </div>
+
+  <div class="col s12">
+    <%= link_to 'Edit', edit_customer_path(@customer) %> |
+    <%= link_to 'Back', customers_path %>
+  </div>
+</div>

@@ -1,6 +1,8 @@
+<div class="row">
 <%= link_to customer_path(customer), :class => "right" do %>
     <div class="chip hoverable">
       <%= image_tag customer.gravatar_url %>
       <%= customer.display %>
     </div>
 <% end %>
+</div>
